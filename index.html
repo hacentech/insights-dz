@@ -66,23 +66,41 @@
     <main>
         <!-- HERO SECTION -->
         <section id="hero" class="hero section">
-            <div class="hero-bg-elements">
-                <div class="glow glow-1"></div>
-                <div class="glow glow-2"></div>
-            </div>
+            <div class="hero-overlay" aria-hidden="true"></div>
+            <div class="hero-grid" aria-hidden="true"></div>
+            <canvas id="starfield" aria-hidden="true"></canvas>
+
             <div class="container hero-content">
-                <span class="badge fade-in-up">Vision & Stratégie</span>
                 <h1 class="hero-title fade-in-up delay-1">Repenser la création de valeur pour une <span
                         class="highlight">croissance durable</span></h1>
                 <p class="hero-subtitle fade-in-up delay-2">
                     Cabinet de conseil et de formation en marketing stratégique, accompagnant les entreprises dans la
-                    structuration de leur croissance et l’optimisation de leur impact marché.
+                    structuration de leur croissance et l'optimisation de leur impact marché.
                 </p>
                 <div class="hero-cta fade-in-up delay-3">
                     <a href="#contact" class="btn btn-primary btn-lg">Contactez-nous <i data-lucide="arrow-right"
                             class="icon-sm"></i></a>
                     <a href="#" class="btn btn-outline btn-lg">Télécharger la brochure</a>
                 </div>
+            </div>
+
+            <!-- Floating icon: Objectif (left) -->
+            <div class="hero-float hero-float--left" aria-hidden="true">
+                <div class="hero-float__icon">
+                    <i data-lucide="target" class="icon-float"></i>
+                </div>
+            </div>
+
+            <!-- Floating icon: Croissance (right) -->
+            <div class="hero-float hero-float--right" aria-hidden="true">
+                <div class="hero-float__icon">
+                    <i data-lucide="trending-up" class="icon-float"></i>
+                </div>
+            </div>
+
+            <div class="hero-scroll" aria-hidden="true">
+                <span>Découvrir</span>
+                <div class="scroll-line"></div>
             </div>
         </section>
 
@@ -448,30 +466,8 @@
             </div>
         </footer>
 
-        <!-- Init Icons and Scripts -->
-        <script>
-            lucide.createIcons();
-
-            // Sticky Header & Mobile Menu
-            const navbar = document.getElementById('navbar');
-            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-            const mobileNav = document.getElementById('mobileNav');
-
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    navbar.classList.add('scrolled');
-                } else {
-                    navbar.classList.remove('scrolled');
-                }
-            });
-
-            mobileMenuBtn.addEventListener('click', () => {
-                mobileNav.classList.toggle('active');
-                const icon = mobileNav.classList.contains('active') ? 'x' : 'menu';
-                mobileMenuBtn.innerHTML = `<i data-lucide="${icon}"></i>`;
-                lucide.createIcons();
-            });
-        </script>
+        <!-- Scripts -->
+        <script src="script.js"></script>
 </body>
 
 </html>
