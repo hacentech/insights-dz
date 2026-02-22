@@ -105,7 +105,7 @@
         </section>
 
         <!-- ABOUT SECTION -->
-        <section id="about" class="section about section-white">
+        <section id="about" class="section about section-white section-full-height">
             <div class="container about-grid">
                 <div class="about-content">
                     <span class="badge">Qui sommes-nous ?</span>
@@ -128,11 +128,101 @@
                     </div>
                 </div>
                 <!-- Abstract visual placeholder representing strategy / structure -->
-                <div class="about-visual">
-                    <div class="glass-card visual-card">
-                        <div class="visual-element-1"></div>
-                        <div class="visual-element-2"></div>
-                        <i data-lucide="lightbulb" class="visual-icon"></i>
+                <div class="about-visual flow-animation-wrapper">
+                    <div class="particles-container" id="about-particles"></div>
+                    <div class="svg-container">
+                        <svg viewBox="0 0 4000 2000" preserveAspectRatio="xMidYMid meet">
+                            <defs>
+                                <linearGradient id="flowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%">
+                                        <animate attributeName="stop-color"
+                                            values="#14532d;#22c55e;#4ade80;#22c55e;#14532d" dur="4s"
+                                            repeatCount="indefinite" />
+                                    </stop>
+                                    <stop offset="25%">
+                                        <animate attributeName="stop-color"
+                                            values="#166534;#4ade80;#86efac;#4ade80;#166534" dur="4s"
+                                            repeatCount="indefinite" begin="0.6s" />
+                                    </stop>
+                                    <stop offset="50%">
+                                        <animate attributeName="stop-color"
+                                            values="#22c55e;#86efac;#bbf7d0;#86efac;#22c55e" dur="4s"
+                                            repeatCount="indefinite" begin="1.2s" />
+                                    </stop>
+                                    <stop offset="75%">
+                                        <animate attributeName="stop-color"
+                                            values="#166534;#4ade80;#86efac;#4ade80;#166534" dur="4s"
+                                            repeatCount="indefinite" begin="1.8s" />
+                                    </stop>
+                                    <stop offset="100%">
+                                        <animate attributeName="stop-color"
+                                            values="#14532d;#22c55e;#4ade80;#22c55e;#14532d" dur="4s"
+                                            repeatCount="indefinite" begin="2.4s" />
+                                    </stop>
+                                </linearGradient>
+
+                                <linearGradient id="flowGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%">
+                                        <animate attributeName="stop-color"
+                                            values="#052e16;#15803d;#22c55e;#15803d;#052e16" dur="5s"
+                                            repeatCount="indefinite" />
+                                    </stop>
+                                    <stop offset="50%">
+                                        <animate attributeName="stop-color"
+                                            values="#16a34a;#4ade80;#86efac;#4ade80;#16a34a" dur="5s"
+                                            repeatCount="indefinite" begin="1s" />
+                                    </stop>
+                                    <stop offset="100%">
+                                        <animate attributeName="stop-color"
+                                            values="#052e16;#15803d;#22c55e;#15803d;#052e16" dur="5s"
+                                            repeatCount="indefinite" begin="2s" />
+                                    </stop>
+                                </linearGradient>
+
+                                <filter id="glow">
+                                    <feGaussianBlur stdDeviation="3" result="coloredBlur" />
+                                    <feMerge>
+                                        <feMergeNode in="coloredBlur" />
+                                        <feMergeNode in="SourceGraphic" />
+                                    </feMerge>
+                                </filter>
+                            </defs>
+
+                            <path fill="url(#flowGradient)" filter="url(#glow)" d="M2003.13,725.47v-65.43h-118.92c-156.22,0-310.74,17.22-461.64,51.35
+                                c-30.87,6.98-61.58,14.67-92.13,23.07c-42.96,11.79-85.59,24.99-127.84,39.57c-107.31,37.04-222.94,67.98-344.83,92.3
+                                c-30.31,6.06-61.02,11.7-92.08,16.93c-16.27,2.74-32.65,5.36-49.12,7.88c-109.55,16.7-223.26,28.36-338.74,34.72
+                                c-76.61,4.22-144.78,5.63-201.68,5.63c-92.54,0-155.28-3.73-176.15-5.18v-60.16c21.04,1.52,168.81,11.19,375.62-0.26
+                                c60.77-3.36,130.47-8.81,206.2-17.48c44.5-5.1,91.09-11.3,139.16-18.85c145.82-22.9,305.34-58.16,462.04-112.24
+                                c24-8.28,48.11-16.13,72.34-23.54c27.08-8.29,54.3-16.03,81.64-23.21c178.05-46.85,361.47-70.53,547.21-70.53h118.92v-65.09
+                                l165,95.26L2003.13,725.47z" />
+                            <path fill="url(#flowGradient2)" filter="url(#glow)" d="M3060.17,1204.64v-65.26h-771.2c-97.55,0-200.9,4.11-307.19,12.22
+                                c-85.08,6.49-197.83,50.64-316.44,107.28c-34.67,16.56-69.84,34.18-104.97,52.24c-47.82,24.58-95.55,49.97-141.83,74.59
+                                c-127.96,68.07-248.82,132.36-340.35,163.76c-126.53,43.4-263.16,75.58-406.11,95.66c-114.19,16.04-232.66,24.44-352.13,24.97
+                                c-4.04,0.01-8.06,0.02-12.04,0.02c-150.61,0-261.59-12.39-307.91-18.62v-60.61c39.15,5.48,158.68,19.99,321.08,19.2
+                                c183.02-0.9,459.56-21.99,737.64-117.37c87.03-29.86,205.85-93.06,331.64-159.98c22.63-12.04,45.43-24.17,68.3-36.25
+                                c30.09-15.88,60.31-31.67,90.43-47.04c50.75-25.89,101.24-50.6,150.43-72.55c116.31-51.9,207.15-79.74,277.7-85.12
+                                c107.8-8.23,212.69-12.4,311.75-12.4h771.2v-65.26l165,95.26L3060.17,1204.64z" />
+                            <path fill="url(#flowGradient)" filter="url(#glow)"
+                                d="M3278.75,1073.72v-65.28l-1165.02-0.87h-441.76c-31.86,0-65.19,0.22-99.05,0.65
+                                c-214.21,2.74-429.7-18.44-640.51-62.94c-71.89-15.17-143.35-33.08-214.14-53.65c-45.36-13.18-90.46-27.45-135.22-42.8
+                                c-88.91-30.47-176.5-65.19-262.3-103.98C191.74,686.53,75.43,662.07,0,651.83v-60.6c12.31,1.58,25.72,3.51,40.12,5.9
+                                c71.68,11.88,182.84,37.67,305.34,93.05c122.31,55.29,248.55,102.03,377.25,139.89c45.49,13.38,91.28,25.66,137.32,36.81
+                                c233.94,56.67,474.16,84.39,712.13,81.35c34.11-0.44,67.69-0.66,99.81-0.66h441.78l1165,0.87V883.2l165,95.26L3278.75,1073.72z" />
+                            <path fill="url(#flowGradient2)" filter="url(#glow)"
+                                d="M2567.13,1387.67v-65.29c-226.45-0.13-446.22-0.17-653.77-0.13c-12.19,0-24.4,0.02-36.62,0.04
+                                c-105,0.16-212.15,0.32-318.03-10.32c-2.78-0.27-5.56-0.56-8.34-0.85c-31.58-3.34-63.03-7.67-94.28-13.27
+                                c-2.48-0.45-4.96-0.9-7.43-1.36c-33.94-6.31-67.62-14.15-100.92-23.9c-409.25-119.76-742.4-151.38-949.81-156.81
+                                c-134.18-3.51-230.3,3.34-287.3,9.7c-62.03,6.93-95.68,15.1-110.63,20.14v-11.51c0.03-0.18,0.06-0.36,0.09-0.55
+                                c0.42-2.81,0.38-5.66-0.09-8.43v-41.91c21.09-5.37,48.8-10.37,80.48-14.52c56.82-7.44,153.66-15.81,292.35-13.47
+                                c215.83,3.65,563.09,34.33,991.76,159.78c56.77,16.61,115.21,27.42,174.5,34.44c2.72,0.32,5.44,0.64,8.16,0.94
+                                c35.79,4.03,71.88,6.71,108.09,8.49c3.04,0.15,6.08,0.29,9.12,0.42c70.81,3.21,141.98,3.11,212.18,2.99
+                                c12.26-0.02,24.49-0.04,36.71-0.04c207.54-0.04,427.32,0.01,653.78,0.13v-65.24l165,95.26L2567.13,1387.67z" />
+                            <path fill="url(#flowGradient)" filter="url(#glow)" d="M2449.91,916.24v-65.26h-617.7c-183.28,0-335.02-34.44-491.99-111.65c-2.68-1.32-5.35-2.65-8.03-3.99
+                                c-24.97-12.5-49.95-26.04-75.09-40.55c-119.92-69.24-243.4-160.78-386.48-269.22C694.63,292.18,465.64,282.9,304.55,298.61
+                                C152.88,313.4,31.87,352.27,0,363.21v-63.24c50.56-16.22,161.88-47.74,298.72-61.08c108.69-10.59,210.82-7.36,303.58,9.59
+                                c117.19,21.43,219.66,64.92,304.57,129.27c166.85,126.46,300.22,224.77,431.79,293.69c28.53,14.96,56.96,28.52,85.64,40.69
+                                c123.07,52.25,250.53,78.85,407.91,78.85h617.7v-65.26l165,95.26L2449.91,916.24z" />
+                        </svg>
                     </div>
                 </div>
             </div>
@@ -163,7 +253,7 @@
         </section>
 
         <!-- OFFERS SECTION -->
-        <section id="offers" class="section offers section-white">
+        <section id="offers" class="section offers section-white section-full-height">
             <div class="container">
                 <div class="text-center">
                     <span class="badge">Nos Offres</span>
@@ -174,13 +264,17 @@
 
                 <div class="offers-grid">
                     <!-- Card 1 -->
-                    <div class="offer-card glass-card">
-                        <div class="offer-icon-wrapper">
-                            <i data-lucide="rocket" class="icon-xl"></i>
+                    <div class="offer-card glass-card fade-in-up delay-1">
+                        <div class="offer-header">
+                            <div class="offer-icon-wrapper">
+                                <i data-lucide="rocket"></i>
+                            </div>
+                            <h3 class="offer-title">Growth Day</h3>
                         </div>
-                        <h3 class="offer-title">Growth Day</h3>
-                        <p class="offer-desc">Workshop stratégique intensif, diagnostic marketing & structuration. Idéal
-                            pour les comités de direction.</p>
+                        <p class="offer-desc">Une journée d'immersion totale avec vos équipes pour diagnostiquer,
+                            débloquer
+                            et
+                            structurer votre croissance.</p>
                         <ul class="offer-features">
                             <li><i data-lucide="check" class="icon-sm"></i> Audit Flash</li>
                             <li><i data-lucide="check" class="icon-sm"></i> Plan d'action 90 jours</li>
@@ -190,14 +284,16 @@
                     </div>
 
                     <!-- Card 2 -->
-                    <div class="offer-card glass-card popular">
+                    <div class="offer-card glass-card popular fade-in-up delay-2">
                         <div class="popular-badge">Plus demandé</div>
-                        <div class="offer-icon-wrapper">
-                            <i data-lucide="graduation-cap" class="icon-xl"></i>
+                        <div class="offer-header">
+                            <div class="offer-icon-wrapper">
+                                <i data-lucide="graduation-cap"></i>
+                            </div>
+                            <h3 class="offer-title">Formation</h3>
                         </div>
-                        <h3 class="offer-title">Formation</h3>
-                        <p class="offer-desc">Programmes de formation structurés en stratégie marketing et création de
-                            valeur. Formats intra et inter-entreprise.</p>
+                        <p class="offer-desc">Des programmes intensifs B2B pour faire monter en compétence vos forces de
+                            vente, marketing et management.</p>
                         <ul class="offer-features">
                             <li><i data-lucide="check" class="icon-sm"></i> Modules pratiques</li>
                             <li><i data-lucide="check" class="icon-sm"></i> Accompagnement post-formation</li>
@@ -207,13 +303,16 @@
                     </div>
 
                     <!-- Card 3 -->
-                    <div class="offer-card glass-card">
-                        <div class="offer-icon-wrapper">
-                            <i data-lucide="merge" class="icon-xl"></i>
+                    <div class="offer-card glass-card fade-in-up delay-3">
+                        <div class="offer-header">
+                            <div class="offer-icon-wrapper">
+                                <i data-lucide="git-merge"></i>
+                            </div>
+                            <h3 class="offer-title">Formule Hybride</h3>
                         </div>
-                        <h3 class="offer-title">Formule Hybride</h3>
-                        <p class="offer-desc">Le parfait équilibre entre conseil stratégique et formation des équipes
-                            pour une implémentation pérenne.</p>
+                        <p class="offer-desc">Le parfait équilibre entre conseil stratégique et formation opérationnelle
+                            pour
+                            une implémentation réussie.</p>
                         <ul class="offer-features">
                             <li><i data-lucide="check" class="icon-sm"></i> Conseil continu</li>
                             <li><i data-lucide="check" class="icon-sm"></i> Montée en compétence</li>
@@ -259,7 +358,7 @@
             </div>
         </section>
         <!-- TESTIMONIALS SECTION -->
-        <section class="section testimonials section-white">
+        <section class="section testimonials section-white section-full-height">
             <div class="container">
                 <div class="text-center">
                     <span class="badge">Avis Clients</span>
@@ -273,7 +372,7 @@
                             notre positionnement marché. L'impact a été immédiat sur notre croissance."</p>
                         <div class="testimonial-author">
                             <div class="author-avatar">
-                                <i data-lucide="user"></i>
+                                <span>AB</span>
                             </div>
                             <div class="author-info">
                                 <h4>Ahmed B.</h4>
@@ -289,11 +388,27 @@
                             contexte B2B."</p>
                         <div class="testimonial-author">
                             <div class="author-avatar">
-                                <i data-lucide="user"></i>
+                                <span>SM</span>
                             </div>
                             <div class="author-info">
                                 <h4>Sarah M.</h4>
                                 <span>Directrice Marketing, InduCorp</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card glass-card">
+                        <i data-lucide="quote" class="quote-icon"></i>
+                        <p class="testimonial-text">"L'accompagnement hybride est clairement ce qui a fait la
+                            différence.
+                            L'équipe Insights a non seulement conseillé, mais aussi outillé nos équipes de vente."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <span>KL</span>
+                            </div>
+                            <div class="author-info">
+                                <h4>Karim L.</h4>
+                                <span>Directeur Commercial, Logistica DZ</span>
                             </div>
                         </div>
                     </div>
@@ -310,7 +425,7 @@
                 </div>
 
                 <div class="faq-accordion">
-                    <div class="faq-item active">
+                    <div class="faq-item">
                         <button class="faq-question">
                             Quelle est la différence entre une formation intra et inter-entreprise ?
                             <i data-lucide="chevron-down" class="faq-icon"></i>
@@ -352,7 +467,7 @@
         </section>
 
         <!-- CONTACT SECTION -->
-        <section id="contact" class="section contact section-white">
+        <section id="contact" class="section contact section-white section-full-height">
             <div class="contact-wrapper glass-card">
                 <div class="contact-info">
                     <h2 class="section-title">Prêt à être rappelé sous <span class="highlight">24h</span> ?</h2>

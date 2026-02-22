@@ -77,25 +77,41 @@
 (function () {
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const mobileNav = document.getElementById('mobileNav');
-    if (!mobileMenuBtn || !mobileNav) return;
+    const navbar = document.getElementById('navbar');
+    if (!mobileMenuBtn || !mobileNav || !navbar) return;
 
     mobileMenuBtn.addEventListener('click', () => {
         mobileNav.classList.toggle('active');
-        const icon = mobileNav.classList.contains('active') ? 'x' : 'menu';
+        const isActive = mobileNav.classList.contains('active');
+        const icon = isActive ? 'x' : 'menu';
         mobileMenuBtn.innerHTML = `<i data-lucide="${icon}"></i>`;
+        document.body.style.overflow = isActive ? 'hidden' : '';
+        if (isActive) {
+            navbar.classList.add('menu-open');
+        } else {
+            navbar.classList.remove('menu-open');
+            // Reset animations so they play again next time
+            mobileNav.querySelectorAll('.mobile-nav-link, .mobile-nav-actions').forEach(el => {
+                el.style.animation = 'none';
+                el.offsetHeight; /* trigger reflow */
+                el.style.animation = null;
+            });
+        }
         if (window.lucide) lucide.createIcons();
     });
 
     mobileNav.querySelectorAll('a').forEach(a => {
         a.addEventListener('click', () => {
             mobileNav.classList.remove('active');
+            navbar.classList.remove('menu-open');
             mobileMenuBtn.innerHTML = `<i data-lucide="menu"></i>`;
+            document.body.style.overflow = '';
             if (window.lucide) lucide.createIcons();
         });
     });
 })();
 
-/* ── FAQ ACCORDION ── */   
+/* ── FAQ ACCORDION ── */
 (function () {
     document.querySelectorAll('.faq-question').forEach(btn => {
         btn.addEventListener('click', () => {
@@ -109,3 +125,35 @@
 
 /* ── INIT LUCIDE ICONS ── */
 if (window.lucide) lucide.createIcons();
+
+/* ── ABOUT PARTICLES ANIMATION ── */
+(function () {
+    const particlesContainer = document.getElementById('about-particles');
+    if (!particlesContainer) return;
+    const particleCount = 40;
+
+    for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+
+        // Random properties
+        const size = Math.random() * 3 + 2;
+        const x = Math.random() * 100;
+        const y = Math.random() * 100;
+        const duration = Math.random() * 4 + 3;
+        const delay = Math.random() * 5;
+        const drift = (Math.random() - 0.5) * 80;
+
+        particle.style.cssText = `
+            width: ${size}px;
+            height: ${size}px;
+            left: ${x}%;
+            top: ${y}%;
+            animation-duration: ${duration}s;
+            animation-delay: ${delay}s;
+            --drift: ${drift}px;
+        `;
+
+        particlesContainer.appendChild(particle);
+    }
+})();
