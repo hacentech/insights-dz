@@ -95,7 +95,7 @@
     });
 })();
 
-/* ── FAQ ACCORDION ── */
+/* ── FAQ ACCORDION ── */   
 (function () {
     document.querySelectorAll('.faq-question').forEach(btn => {
         btn.addEventListener('click', () => {
