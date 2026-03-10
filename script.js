@@ -157,3 +157,35 @@ if (window.lucide) lucide.createIcons();
         particlesContainer.appendChild(particle);
     }
 })();
+
+/* ── CUSTOM VIDEO PLAYER ── */
+(function () {
+    const video = document.getElementById("video");
+    const circlePlayButton = document.getElementById("circle-play-b");
+
+    if (video && circlePlayButton) {
+        function togglePlay() {
+            if (video.paused || video.ended) {
+                video.play();
+            } else {
+                video.pause();
+            }
+        }
+
+        circlePlayButton.addEventListener("click", togglePlay);
+
+        // Clic sur la vidéo pour pause/play
+        video.addEventListener("click", togglePlay);
+
+        video.addEventListener("playing", function () {
+            circlePlayButton.style.opacity = 0;
+            circlePlayButton.style.pointerEvents = 'none';
+        });
+
+        video.addEventListener("pause", function () {
+            circlePlayButton.style.opacity = 1;
+            circlePlayButton.style.pointerEvents = 'auto';
+        });
+    }
+})();
+
