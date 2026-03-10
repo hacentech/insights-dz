@@ -1593,6 +1593,103 @@ textarea.form-control {
 }
 
 /* ==========================================================================
+   Logo Carousel
+   ========================================================================== */
+.logo-slider {
+    height: 80px;
+    margin: var(--space-sm) auto var(--space-xl);
+    position: relative;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+.logo-slider::before,
+.logo-slider::after {
+    position: absolute;
+    background-image: linear-gradient(to right, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+    content: '';
+    height: 100%;
+    width: 15%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.logo-slider::before {
+    left: 0;
+    top: 0;
+}
+
+.logo-slider::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+}
+
+.logo-slide-track {
+    width: calc(150px * 24);
+    display: flex;
+    animation: scroll2 40s linear infinite;
+    justify-content: space-between;
+}
+
+.logo-slide {
+    width: 150px;
+    height: 80px;
+    display: grid;
+    place-items: center;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.logo-slide img {
+    max-width: 85%;
+    max-height: 85%;
+    object-fit: contain;
+    filter: grayscale(100%) opacity(0.6);
+    transition: all var(--transition-base);
+}
+
+.logo-slide:hover img {
+    filter: grayscale(0%) opacity(1);
+}
+
+.logo-slide:hover {
+    transform: scale(1.1);
+}
+
+@keyframes scroll2 {
+    0% {
+        transform: translateX(0px);
+    }
+
+    100% {
+        transform: translateX(calc(-150px * 12));
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .logo-slide-track {
+        width: calc(100px * 24);
+    }
+
+    .logo-slide {
+        width: 100px;
+    }
+
+    @keyframes scroll2 {
+        0% {
+            transform: translateX(0px);
+        }
+
+        100% {
+            transform: translateX(calc(-100px * 12));
+        }
+    }
+}
+
+/* ==========================================================================
    Custom Video Player
    ========================================================================== */
 .video-container {
